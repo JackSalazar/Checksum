@@ -17,10 +17,12 @@
   ```bash
   git branch {task}
   git branch --set-upstream-to=origin {task}
+  git switch {task}
   touch {task}/{file}
   git add {task}/{file}
   git commit -m '{creating file}' 
   git push origin {task}
+  git switch main
   ```
 
 ### Incrementally Work on the {task} Task
@@ -35,6 +37,7 @@
        break;
     fi
   done
+  git switch main
   git pull origin {task} ; git push origin {task}
   make validate_{task}
   ```
