@@ -37,8 +37,7 @@ Note that "input_{n}" denotes the n<sup>th</sup> call to the OS to read an integ
    ```
 
 ## Objectives
-   1. To obtain a better understanding how the Data Link layer uses the checksum field to determine if an transmission error occurs.
-
+   1. To obtain a better understanding how the Network Layer (layer 3) uses the checksum field to determine if an transmission error occurs.
    1. To exercise our knowledge of control flow. The program requires the use of
       - two for-loops, and
       - a ternary operator, which is equivalent to an if-then-else statement
