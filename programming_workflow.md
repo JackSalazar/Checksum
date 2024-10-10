@@ -37,9 +37,9 @@
        break;
     fi
   done
-  git switch main
   git pull origin {task} ; git push origin {task}
   make validate_{task}
+  git switch main
   ```
 
 ### To Finish the {task} Task

@@ -27,10 +27,16 @@ function git_branch_starting_point () {
 
   [[ -z "${main}" ]] && main="main"
 
-  diff -u <(git rev-list --first-parent java --) \
-          <(git rev-list --first-parent main -- ) | \
-     sed -n '/^@@/,$s/^ //p' | sed -n '1p'
+  _commit=$( diff -u <(git rev-list --first-parent ${branch} --) \
+                     <(git rev-list --first-parent ${main} -- ) | \
+             sed -n '/^@@/,$s/^ //p' | sed -n '1p' )
 
+  if [[ -z $_commit ]] ; then
+    # If a fast-forward merge was perform, all commits are in common
+    # Hence, the branching point is the same for both
+    _commit=$(git log rev-list ${main} | tail -1)
+  fi
+  echo $_commit
 }
 
 git_branch_starting_point "$@"

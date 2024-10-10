@@ -36,7 +36,7 @@
 
 BRANCHES   ?= java java_tac mips
 BRANCH     ?= main
-MIN_COMMITS = 5
+MIN_COMMITS = 4
 
 #########################################################################################----
 # Variable Definitions associated with SUBMISSION
@@ -159,7 +159,7 @@ confirm_mips:
 
 confirm_branch: validate_branch
 	git switch --detach ${SUBMISSION_TAG}
-	make --directory=${BRANCH} -f ${MAKEFILE} test_${BRANCH} 
+	make -f ${MAKEFILE} test_${BRANCH} 
 	git switch main
 
 
@@ -188,7 +188,7 @@ validate_tag:
 
 validate_matched_tags: 
 	@ bin/git_matched_tags ${SUBMISSION_TAG} || \
-	  { echo "Remote/Local Tags Mismatch:  ${SUBMISSION_TAG} (hint \'git push origin submitted\')" ; false ; }
+	  { echo "Remote/Local Tags Mismatch:  ${SUBMISSION_TAG} (hint 'git push origin ${SUBMISSION_TAG}')" ; false ; }
 
 
 .PHONEY: clean
