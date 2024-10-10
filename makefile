@@ -164,19 +164,20 @@ confirm_branch: validate_branch
 
 
 ############################################################################
-validate_branch: validate_branch_exists validate_number_commits validate_merged validate_ontime
+validate_branch: validate_branch_exists validate_merged validate_ontime
+
 
 validate_branch_exists:
-	@ [[ "$$(git branch --list --format="%(refname:short)" ${BRANCH})" == "${BRANCH}" ]] || \
-	  { echo "Branch \"${BRANCH}\" does not exist" ; false ; }
+	@ [[ "$$(git branch --remote --list --format="%(refname:short)" origin/${BRANCH})" == "origin/${BRANCH}" ]] || \
+	  { echo "Remote Branch \"${BRANCH}\" does not exist" ; false ; }
 
 validate_merged:
-	@ [[ "$$(git branch --format="%(refname:short)" --merged main ${BRANCH})" == "${BRANCH}" ]] || \
-	  { echo "Branch \"${BRANCH}\" has not been merged to main" ; false ; }
+	@ [[ "$$(git branch --remote --format="%(refname:short)" --merged origin/main origin/${BRANCH})" == "origin/${BRANCH}" ]] || \
+	  { echo "Remote Branch \"${BRANCH}\" has not been merged to main" ; false ; }
 
 validate_number_commits: 
 	@ [[ $(NUM_COMMITS) -ge $(MIN_COMMITS) ]]  ||  \
-	  { echo "Pushed Branch Commits on \"${BRANCH}\":  $(NUM_COMMITS) < $(MIN_COMMITS) required commits" ; false ; }
+	  { echo "Remote Branch Commits on \"${BRANCH}\":  $(NUM_COMMITS) < $(MIN_COMMITS) required commits" ; false ; }
 
 validate_ontime: validate_tag validate_matched_tags DUE_DATE
 	@ bin/git_tagged_ontime "${DUE_DATE}" ${SUBMISSION_TAG} || \
