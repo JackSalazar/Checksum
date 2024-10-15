@@ -29,26 +29,20 @@ next:               ;
                     continue loop;
                 }
 done:           ;  
-
-                //quotient   = sum / (max_int + 1); //quotient = 684 / (255 +1) == 2
+   
                 qsetup = max_int +1;
                 quotient = sum / qsetup;
 
-                //remainder  = sum % (max_int + 1); //remainder = 684 % (255 + 1) == 172
                 remainder = sum % qsetup;
 
-
-                //checksum = max_int - ( quotient + remainder ); //the checksum is the value to verify that there was no corruption
                 qsetup = quotient + remainder;
                 checksum = max_int - qsetup;
 
-                //result   = (header_checksum == checksum) ? 0 : checksum; //if the header and checksum are the same, then return 0, which means everything is okay. Otherwise, return what the checksum should be
                 if (header_checksum == checksum) {
     otherifbody:    result = 0;         
                 }else {
     otherifnot:      result = checksum;          
                 }
-
 
                 return result; 
 }
