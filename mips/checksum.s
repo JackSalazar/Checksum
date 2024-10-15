@@ -25,11 +25,11 @@ body:   nop                                                   #;
         add $t7, $v0, $zero                                                   #    value = mips.retval();
 
                 
-    decision:   bne $t0, 5, ifnot                                            #             if (i == 5){
-    ifbody:     nop                                         #       ;
+decision:   bne $t0, 5, ifnot                                            #             if (i == 5){
+ifbody:     nop                                         #       ;
                 add $t6, $t7, $zero                                            #        header_checksum = value;
                 b next                                           #    } else {
-    ifnot:      nop                                           #    ;          
+ifnot:      nop                                           #    ;          
                 add $t4, $t4, $t7                                           #        sum = sum + value; 
                                                            #    }
 next:   nop                                                   #    ;               
@@ -51,11 +51,11 @@ done:   nop                                                      #;
         sub $t5, $t1, $t8                                                   #checksum = max_int - qsetup;
 
         bne $t6, $t5, otherifnot                                                   #if (header_checksum == checksum) {
-    otherifbody: nop
+otherifbody: nop
                 li $v0, 0
                 jr $ra                                           #    result = 0;         
                                                            #}else {
-    otherifnot: nop 
+otherifnot: nop 
                 add $v0, $t5, $zero                               #     result = checksum;          
                 jr $ra                                           #}
 
