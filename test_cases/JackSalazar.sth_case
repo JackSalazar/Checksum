@@ -1,0 +1,9 @@
+
+[case]
+INPUT=../test_cases/JackSalazar61.txt
+EXIT_STATUS=0
+
+
+[case]
+INPUT=../test_cases/JackSalazar77.txt
+EXIT_STATUS=0
