@@ -8,29 +8,41 @@ public static int checksum(){
    int result;
    int value;
    int i;
-init: ;
-    i = 0;
-   for (;i < 10;){
+   int qsetup;
 
-    mips.read_d();
-    value = mips.retval();
+init:           ;
+                i = 0;
+loop:           for (;i < 10;){
+body:           ;
+                    mips.read_d();
+                    value = mips.retval();
+                
+    decision:                if (i == 5){
+    ifbody:         ;
+                        header_checksum = value;
+                    } else {
+    ifnot:          ;          
+                        sum = sum + value; 
+                    }
+next:               ;               
+                    i = i + 1;
+                    continue loop;
+                }
+done:           ;  
 
-    if (i == 5){
-        header_checksum = value;
-    } else {
-        sum += value;
-    }
+                //quotient   = sum / (max_int + 1); //quotient = 684 / (255 +1) == 2
+                qsetup = max_int +1;
+                quotient = sum / qsetup;
 
-    i = i + 1;
-   }
+                //remainder  = sum % (max_int + 1); //remainder = 684 % (255 + 1) == 172
+                remainder = sum % qsetup;
+
+
+                //checksum = max_int - ( quotient + remainder ); //the checksum is the value to verify that there was no corruption
+                qsetup = quotient + remainder;
+                checksum = max_int - qsetup;
+
+                result   = (header_checksum == checksum) ? 0 : checksum; //if the header and checksum are the same, then return 0, which means everything is okay. Otherwise, return what the checksum should be
    
-   quotient   = sum / (max_int + 1); //quotient = 684 / (255 +1) == 2
-
-   remainder  = sum % (max_int + 1); //remainder = 684 % (255 + 1) == 172
-
-   checksum = max_int - ( quotient + remainder ); //the checksum is the value to verify that there was no corruption
-
-   result   = (header_checksum == checksum) ? 0 : checksum; //if the header and checksum are the same, then return 0, which means everything is okay. Otherwise, return what the checksum should be
-   
-   return result; 
+                return result; 
 }
