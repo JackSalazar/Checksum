@@ -42,7 +42,13 @@ done:           ;
                 qsetup = quotient + remainder;
                 checksum = max_int - qsetup;
 
-                result   = (header_checksum == checksum) ? 0 : checksum; //if the header and checksum are the same, then return 0, which means everything is okay. Otherwise, return what the checksum should be
-   
+                //result   = (header_checksum == checksum) ? 0 : checksum; //if the header and checksum are the same, then return 0, which means everything is okay. Otherwise, return what the checksum should be
+                if (header_checksum == checksum) {
+    otherifbody:    result = 0;         
+                }else {
+    otherifnot:      result = checksum;          
+                }
+
+
                 return result; 
 }
