@@ -1,0 +1,9 @@
+[default]
+DRIVER=java_subroutine
+
+[global]
+ENTRY=checksum
+
+[case]
+INPUT=../test_cases/252.txt
+EXIT_STATUS=0
