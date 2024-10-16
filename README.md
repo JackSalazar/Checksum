@@ -33,7 +33,7 @@ Note that "input_{n}" denotes the n<sup>th</sup> call to the OS to read an integ
 
    ```java
    mips.read_d();
-   value_{i} = mips.retval();
+   input_{i} = mips.retval();
    ```
 
 ## Objectives
