@@ -1,0 +1,10 @@
+[default]
+DRIVER=java_subroutine
+OPTIONS="-R null"
+
+[global]
+ENTRY=checksum
+
+[case]
+INPUT=../test_cases/Jaspreet1805.txt
+EXIT_STATUS=0
