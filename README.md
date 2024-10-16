@@ -18,8 +18,8 @@ The subroutine performs the follow set of calculations:
    ```java
    max_int    = 255;
 
-   sum               = (summation i=0,4  value_i ) + (summation i=6,9  value_i )
-   header_checksum   = value_5;
+   sum = (summation i=0,4  input_i ) + (summation i=6,9  input_i )
+   header_checksum   = input_5;
 
    quotient   = sum / (max_int + 1);
    remainder  = sum % (max_int + 1);
