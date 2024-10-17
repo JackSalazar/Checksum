@@ -18,8 +18,8 @@ The subroutine performs the follow set of calculations:
    ```java
    max_int    = 255;
 
-   sum               = (summation i=0,4  value_i ) + (summation i=6,9  value_i )
-   header_checksum   = value_5;
+   sum = (summation i=0,4  input_i ) + (summation i=6,9  input_i )
+   header_checksum   = input_5;
 
    quotient   = sum / (max_int + 1);
    remainder  = sum % (max_int + 1);
@@ -33,14 +33,15 @@ Note that "input_{n}" denotes the n<sup>th</sup> call to the OS to read an integ
 
    ```java
    mips.read_d();
-   value_{i} = mips.retval();
+   input_{i} = mips.retval();
    ```
 
 ## Objectives
    1. To obtain a better understanding how the Network Layer (layer 3) uses the checksum field to determine if an transmission error occurs.
+
    1. To exercise our knowledge of control flow. The program requires the use of
       - two for-loops, and
-      - a ternary operator, which is equivalent to an if-then-else statement
+      - a ternary operator, which is equivalent to an if-then-else statement.
 
    1. To expand our usage of the sth system, and further our understand of the CLI.
 
@@ -56,7 +57,7 @@ Note that "input_{n}" denotes the n<sup>th</sup> call to the OS to read an integ
 
 
 ## Tasks
-Note that these instructions presume that the current working directory is: `~/classes/comp122/deliverables/41-simple-interest-{account}`.
+Note that these instructions presume that the current working directory is: `~/classes/comp122/deliverables/42-checksum-{account}`.
 
 ### Test_cases:
   1. Create at least one test cases within the file `test_cases/{account}.sth_case`. 
@@ -147,7 +148,7 @@ Of course, we have a make recipe that takes it even a step further.  We can simp
   1. Start the `java` Task with the file `java/check_sum.j` (see [Programming Workflow](./programming_flow.md))
   1. Incrementally Work on the `java` Task  
      * Write a Java Method to compute checksum value
-       - Insert the following starter code into your java/simple_interest.j file
+       - Insert the following starter code into your java/checksum.j file
          ```java
          public static int checksum() {
    
@@ -171,7 +172,7 @@ Of course, we have a make recipe that takes it even a step further.  We can simp
   1. Finish your Java Task   
 
 
-### Java_tac: `simple_interest.j`  
+### Java_tac: `checksum.j`  
   1. Start the `java_tac` Task
   1. Incrementally Work on your `java_task` task
   1. Finish the `java_tac` task.
@@ -179,7 +180,7 @@ Of course, we have a make recipe that takes it even a step further.  We can simp
 
 ### MIPS: `checksum.s`
   1. Start the `mips` Task with the file `mips/checksum.s`
-     - edit `mips/simple_interest.j` to include the following starter code.
+     - edit `mips/checksum.j` to include the following starter code.
 
        ```mips
                             .text
