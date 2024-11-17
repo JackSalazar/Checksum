@@ -1,0 +1,58 @@
+# Grading Report
+# Github Account: JackSalazar
+# Assignment:    "42-checksum"
+# --- Due Date:        "Oct 17 23:59 PDT"
+# --- Version Graded:  "graded_version (2773e9d)"
+# --- Version Date:    "Nov 17 10:32 "
+# --- Status:          "Submission On Time"
+
+  10 Points:  Test Cases (10 Points):
+  15 Points:  Java Execution (15 Points):
+  15 Points:  Java Code (15 Points):
+  15 Points:  Java TAC Execution (15 Points):
+  15 Points:  Java TAC Code (15 Points):
+  15 Points:  MIPS Execution (15 Points):
+  15 Points:  MIPS Code (15 Points):
+  -10 Points:  Additional Comments (0 Points):
+                    I had to merge mips to test
+----
+  90 Points:  Total
+
+ASSIGNMENT_42_total="90"        # JackSalazar
+
+BRANCHES:
+  java
+  java_tac
+* main
+  mips
+
+TAGS:
+java_submitted
+java_tac_submitted
+mips_submitted
+
+STUDENT COMMIT HISTORY:
+
+* Due Date: Oct 17 23:59 PDT  -----------------
+*  63c54d4  Oct 15 21:11 PDT 
+*  c9222c4  Oct 15 17:18 PDT 
+*  fdb6f37  Oct 15 10:45 PDT 
+*  f6f7be3  Oct 15 10:44 PDT 
+*  c635fc0  Oct 15 10:44 PDT 
+*  eedfe20  Oct 15 10:28 PDT  (tag: mips_submitted, tag: java_tac_submitted, tag: java_submitted)
+*  27f06b1  Oct 15 10:17 PDT 
+*  93079c8  Oct 15 10:10 PDT 
+*  2de42f0  Oct 15 10:05 PDT 
+*  7dbb1cd  Oct 15 10:03 PDT 
+*  75bbcb0  Oct 15 09:21 PDT 
+*  4e45522  Oct 14 21:18 PDT 
+*  b27af8a  Oct 14 21:16 PDT  (origin/java_tac, java_tac)
+*  2465fab  Oct 14 21:15 PDT 
+*  1596df4  Oct 14 21:12 PDT 
+*  43a8275  Oct 14 20:56 PDT 
+*  1bcf69b  Oct 14 20:50 PDT  (origin/java, java)
+*  59208f7  Oct 14 20:46 PDT 
+*  8db5e1d  Oct 14 19:24 PDT 
+*  cad15e6  Oct 12 20:02 PDT 
+*  10422d3  Oct 12 19:57 PDT 
+
