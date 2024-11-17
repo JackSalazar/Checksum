@@ -57,7 +57,7 @@ Note that "input_{n}" denotes the n<sup>th</sup> call to the OS to read an integ
 
 
 ## Tasks
-Note that these instructions presume that the current working directory is: `~/classes/comp122/deliverables/41-simple-interest-{account}`.
+Note that these instructions presume that the current working directory is: `~/classes/comp122/deliverables/42-checksum-{account}`.
 
 ### Test_cases:
   1. Create at least one test cases within the file `test_cases/{account}.sth_case`. 
